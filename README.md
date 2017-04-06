@@ -22,9 +22,48 @@ If `ipykernel` is installed in other environments, we can load the `ipykernel` i
 
 [__Note__] If a package is NOT installed in an active environment but the conda-root, the package is not imported.
 For example, `numpy` is only installed in the `conda-root`. (not installed in `py35`)
-```
+```python
 source activate py35
 python
 import numpy
 ImportError: No module named 'numpy'
 ```
+
+## SSH login with (authentication) key
+
+Objectives:
+
+* Set up password-less SSH login
+
+Benefits:
+
+* Easier to login
+
+Let's begin.
+
+1. On **local** machine, create an authentication key-pair *if you don't have one*. Don't enter the passphrase if you don't want to use it
+
+    ```bash
+    ssh-keygen -t rsa -b 2048 -f id_rsa
+    ```
+
+2. Add your key to **local** authentication agent
+
+    ```bash
+    ssh-add ~/.ssh/id_rsa
+    ```
+
+3. Copy your key from *local* machine to the *server*
+
+    ```bash
+    scp ~/.ssh/id_rsa.pub {**SERVER**}:~
+    ```
+
+4. On the **server**, Add your key to the list of authorized keys
+
+    ```bash
+    cd ~/.ssh
+    cat ~/id_rsa.pub >> authorized_keys2
+    rm ~/id_rsa.pub
+    ```
+
