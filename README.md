@@ -11,6 +11,10 @@ Basic settings about conda, jupyter, tensorflow, or other settings.
   - Python 2.7, `conda create --name py27 python=2.7 [other packages]`
 - Create new environments with ipykernel (__Recommended__)
   - `conda create -n py35 python=3.5 ipykernel`
+  - Consider following packages when above command is used:
+    - (Basic) pandas, scipy, matplotlib
+    - (Deep learning) tensorflow [See intall guide](https://www.tensorflow.org/install/)
+    - (Network) networkx
 
 If `ipykernel` is installed in other environments, we can load the `ipykernel` in main `jupyter-notebook`. It is unnecessary to install `jupyter-notebook` or other packages for `jupyter-notebook`. 
 
