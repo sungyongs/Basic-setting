@@ -18,6 +18,12 @@ Basic settings about conda, jupyter, tensorflow, or other settings.
 
 If `ipykernel` is installed in other environments, we can load the `ipykernel` in main `jupyter-notebook`. It is unnecessary to install `jupyter-notebook` or other packages for `jupyter-notebook`. 
 
+[__Note__] Since `jupyter lab` is launched, `nb_conda_kernel` should be installed to load the kernels in other environments. Do the following command in the **base** environment.
+```python
+conda install -c conda-forge nb_conda_kernels
+```
+Then, it should be able to load other kernels. [See issue](https://github.com/jupyterlab/jupyterlab/issues/1557).
+
 - Switch environments
   - `source activate py35`
   - `source deactivate`
