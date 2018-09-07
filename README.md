@@ -22,6 +22,16 @@ If `ipykernel` is installed in other environments, we can load the `ipykernel` i
 ```python
 conda install -c conda-forge nb_conda_kernels
 ```
+[__Note__] If a following error appears,
+```bash
+undefined symbol: zmq_curve_public
+```
+Reinstall `pyzmq` and `zmq`.
+```bash
+$ pip install pyzmq
+$ pip install pyzmp --upgrade
+```
+
 Then, it should be able to load other kernels. [See issue](https://github.com/jupyterlab/jupyterlab/issues/1557).
 
 - Switch environments
