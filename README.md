@@ -20,7 +20,7 @@ If `ipykernel` is installed in other environments, we can load the `ipykernel` i
 
 [__Note__] Since `jupyter lab` is launched, `nb_conda_kernel` should be installed to load the kernels in other environments. Do the following command in the **base** environment.
 ```python
-~~conda install -c conda-forge nb_conda_kernels~~
+[Deprecated]conda install -c conda-forge nb_conda_kernels
 conda install nb_conda_kernels
 ```
 [__Note__] If a following error appears,
