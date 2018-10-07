@@ -1,13 +1,16 @@
 # Basic-setting
 Basic settings about conda, jupyter, tensorflow, or other settings.
 
+## Anaconda
+Following scripts are applicable on Anaconda Distribution Version 5.3 | Release Date: September 28, 2018.
+`conda 4.5.11` comes with the Anaconda distribution.
 
 ## Conda
 [Conda Manual](https://conda.io/docs/index.html)
 - See environments list
   - `conda info --envs`
 - Create new environments
-  - Python 3.5, `conda create --name py35 python=3.5 [other packages]`
+  - Python 3.6, `conda create --name py36 python=3.6 [other packages]`
   - Python 2.7, `conda create --name py27 python=2.7 [other packages]`
 - Create new environments with ipykernel (__Recommended__)
   - `conda create -n py35 python=3.5 ipykernel`
@@ -16,13 +19,13 @@ Basic settings about conda, jupyter, tensorflow, or other settings.
     - (Deep learning) tensorflow [See intall guide](https://www.tensorflow.org/install/)
     - (Network) networkx
 
-If `ipykernel` is installed in other environments, we can load the `ipykernel` in main `jupyter-notebook`. It is unnecessary to install `jupyter-notebook` or other packages for `jupyter-notebook`. 
-
 [__Note__] Since `jupyter lab` is launched, `nb_conda_kernel` should be installed to load the kernels in other environments. Do the following command in the **base** environment.
 ```python
 [Deprecated]conda install -c conda-forge nb_conda_kernels
 conda install nb_conda_kernels
 ```
+If `ipykernel` is installed in other environments, we can load the `ipykernel` in main `jupyter-notebook`. It is unnecessary to install `jupyter-notebook` or other packages for `jupyter-notebook`. 
+
 [__Note__] If a following error appears,
 ```bash
 undefined symbol: zmq_curve_public
