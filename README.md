@@ -15,8 +15,14 @@ Following scripts are applicable on Anaconda Distribution Version 5.3 | Release 
 - Create new environments with ipykernel (__Recommended__)
   - `conda create -n py35 python=3.5 ipykernel`
   - Consider following packages when above command is used:
-    - (Basic) pandas, scipy, matplotlib
-    - (Deep learning) tensorflow [See intall guide](https://www.tensorflow.org/install/)
+    - (Basic) 
+      - `conda install numpy`
+      - `conda install pandas`
+      - `conda install scikit-learn` (scipy will be installed)
+      - `conda install -c conda-forge matplotlib`
+    - (Deep learning)
+      - tensorflow [See install guide](https://www.tensorflow.org/install/)
+      - pytorch [See install guide](https://pytorch.org/)
     - (Network) networkx
 
 [__Note__] Since `jupyter lab` is launched, `nb_conda_kernel` should be installed to load the kernels in other environments. Do the following command in the **base** environment.
@@ -39,7 +45,7 @@ $ pip install pyzmp --upgrade
 Then, it should be able to load other kernels. [See issue](https://github.com/jupyterlab/jupyterlab/issues/1557).
 
 - Switch environments
-  - `source activate py35`
+  - `source activate py36`
   - `source deactivate`
 - Path of kernels
   - `~/anaconda2/envs/[env_name]/share/jupyter/kernels/[kernel-name]`
@@ -47,7 +53,7 @@ Then, it should be able to load other kernels. [See issue](https://github.com/ju
 [__Note__] If a package is NOT installed in an active environment but the conda-root, the package is not imported.
 For example, `numpy` is only installed in the `conda-root`. (not installed in `py35`)
 ```python
-source activate py35
+source activate py36
 python
 import numpy
 ImportError: No module named 'numpy'
